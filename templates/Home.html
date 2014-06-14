@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+<h1>My Blog </h1>
+<h3>Hi {{ name.username }}</h3>
+<a href="/logout">Logout</a>
+
+<p>This is Home.</p>
+
+<a href="/add_post">Create Post</a>
+
+
+
+<ul>
+    {% for post in posts %}
+
+
+        <h2><a href="/post/{{  post.slug }}" >{{ post.title }}</a></h2>
+
+        <div class="content">
+            <p>
+                {{ post.text }}
+            </p>
+            <span>
+                Posted by {{ post.author }}  on {{ post.created_on }}
+            </span>
+        </div>
+
+
+    {% endfor %}
+</ul>
+
+</body>
+</html>
